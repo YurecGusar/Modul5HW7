@@ -1,16 +1,16 @@
 import React from 'react';
-
 import './App.css';
-
-import Users from './component/users'
+import Users from './component/users';
+import Products from './component/products';
 
 
 function App() {
   return (
     <div className="App">
-         <h1>Develop</h1>
-         <Users/>
-   
+         <h1>Categoryes/Products</h1>
+         <Products />
+         <div>_______________________________________________________________</div>
+         <Users />
     </div>
   );
 }

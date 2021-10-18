@@ -2,3 +2,8 @@
 export const GET_USERS = 'GET_USERS';
 export const DELETE_USER = 'DELETE_USER';
 export const USERS_ERROR = 'USERS_ERROR'
+
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const POST_PRODUCTS = 'POST_PRODUCTS';
+export const DELETE_PRODUCT = 'DELETE_PRODUCT';
+export const PRODUCTS_ERROR = 'PRODUCTS_ERROR'
