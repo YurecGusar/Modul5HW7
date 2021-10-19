@@ -67,8 +67,8 @@ namespace Modul5HW7Server.Controllers
         [Route("{id}")]
         public void DeleteProduct(int id)
         {
-            var test = _products.FirstOrDefault((x) => x.Id == id);
-            _products.Remove(test);
+            var deletedObj = _products.FirstOrDefault((x) => x.Id == id);
+            _products.Remove(deletedObj);
         }
     }
 }
