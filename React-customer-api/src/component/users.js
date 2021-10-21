@@ -8,7 +8,6 @@ import {getUsers, deleteUser} from '../store/actions/usersActions'
     }
 
     ondeleteUser(id){
-        debugger;
         this.props.deleteUser(id);
     }
 

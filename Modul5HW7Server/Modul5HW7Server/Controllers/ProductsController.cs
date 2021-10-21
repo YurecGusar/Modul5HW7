@@ -70,5 +70,14 @@ namespace Modul5HW7Server.Controllers
             var deletedObj = _products.FirstOrDefault((x) => x.Id == id);
             _products.Remove(deletedObj);
         }
+
+
+        [HttpPut]
+        public void UpdateProduct(ProductView product)
+        {
+            var oldProduct = _products.FirstOrDefault(x => x.Id == product.Id);
+            oldProduct.Name = product.Name;
+            oldProduct.Title = product.Title;
+        }
     }
 }

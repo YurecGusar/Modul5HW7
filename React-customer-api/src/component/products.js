@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {getProducts, deleteProduct, createProduct} from '../store/actions/productsActions'
+import {getProducts, deleteProduct, createProduct, updateProduct} from '../store/actions/productsActions'
 
 let newProduct = {name: "Created Name", title: "Created Title"}
 
@@ -9,9 +9,12 @@ let newProduct = {name: "Created Name", title: "Created Title"}
         super(props);
         this.state = {
             newProduct:{
-                name: "",
-                title: ""
-            }
+                id: 0,
+                name: "", // лучше undefined
+                title: "",
+                renderUpdateComp: false
+            },
+            renderUpdateComp:false
         }
     }
 
@@ -19,12 +22,7 @@ let newProduct = {name: "Created Name", title: "Created Title"}
         this.props.getProducts();
     }
 
-    componentDidUpdate() {
-        this.props.getProducts();
-    }
-
     ondeleteProduct(id) {
-        debugger;
         this.props.deleteProduct(id);
     }
 
@@ -58,10 +56,15 @@ let newProduct = {name: "Created Name", title: "Created Title"}
         });
     }
 
+    onEditClick() {
+        this.state.renderUpdateComp ? this.setState({renderUpdateComp: false}) : this.setState({renderUpdateComp: true});
+    }
+
     render() {
-        const {products} = this.props.products
-        console.log(products)
+        const {products} = this.props.products;
+        console.log(products);
         const {newProduct} = this.state;
+        // const {renderUpdateComp} = this.state;
         return (<>
             <div>                
                 <div>
@@ -71,14 +74,16 @@ let newProduct = {name: "Created Name", title: "Created Title"}
                 Title: <input type="text" onChange={this.onChangeTitle} name="productTitle" value={this.state.newProduct.title}/>
                 <br/>
                 </div>
-                <button onClick={()=>this.onCreateProduct(newProduct)}>Create</button>
+                <button onClick={()=>this.onCreateProduct(this.state.newProduct)}>Create</button>
             </div>
             <div>
                 <h3>Products:</h3>
                 {products.map(p => 
                      <React.Fragment key={p.id}>
                          <h6 >{p.name} {p.title}</h6> 
-                     <button onClick={()=>this.ondeleteProduct(p.id)}>-</button>
+                     <button onClick={()=>this.ondeleteProduct(p.id)}>Delete</button>
+                     <button onClick={()=>this.onEditClick()}>Edit</button>
+                     <EditComponent renderUpdateComp={this.state.renderUpdateComp}/>
                      </React.Fragment>
                 )}
             </div>
@@ -87,6 +92,28 @@ let newProduct = {name: "Created Name", title: "Created Title"}
     }
 }
 
+class EditComponent extends React.Component{
+
+    constructor(props){
+        super(props);
+    }
+    render(){
+
+        if(this.props.renderUpdateComp){
+            return (
+                <div>True</div>
+            );
+        }
+        else{
+            return "";
+        }
+
+        // return <>
+        //     {this.props.renderUpdateComp ? "true" : ""}
+        // </>;
+    }
+}
+
 const mapStateToProps  = (state) => ({products:state.products});
 
-export default connect(mapStateToProps, {getProducts, deleteProduct, createProduct})(products);
+export default connect(mapStateToProps, {getProducts, deleteProduct, createProduct, updateProduct})(products);

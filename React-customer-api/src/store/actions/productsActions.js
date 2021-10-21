@@ -1,4 +1,4 @@
-import {GET_PRODUCTS, PRODUCTS_ERROR, DELETE_PRODUCT, POST_PRODUCTS} from '../types'
+import {GET_PRODUCTS, PRODUCTS_ERROR, DELETE_PRODUCT, POST_PRODUCTS, UPDATE_PRODUCT} from '../types'
 import axios from 'axios'
 
 export const getProducts = () => async dispatch => {
@@ -20,7 +20,6 @@ export const getProducts = () => async dispatch => {
 
 export const deleteProduct = (id) => async (dispatch) => {
     try{
-        debugger;
         await axios.delete(`https://localhost:44377/api/Products/${id}`)
 
         dispatch({
@@ -38,9 +37,7 @@ export const deleteProduct = (id) => async (dispatch) => {
 
 export const createProduct = (newProduct) => async (dispath) =>{
     try{
-        debugger;
         await axios.post(`https://localhost:44377/api/Products`, newProduct)
-        debugger;
         dispath({
             type: POST_PRODUCTS,
             payload: newProduct
@@ -50,6 +47,23 @@ export const createProduct = (newProduct) => async (dispath) =>{
         dispath({
             type: PRODUCTS_ERROR,
             payload: console.log(e),
+        })
+    }
+}
+
+export const updateProduct = (product) => async (dispath) =>{
+    try{
+        await axios.put(`https://localhost:44377/api/Products`, product)
+        dispath({
+            type: UPDATE_PRODUCT,
+            payload: product
+        })
+
+    }
+    catch(e){
+        dispath({
+            type: UPDATE_PRODUCT,
+            payload: console.log(e)
         })
     }
 }

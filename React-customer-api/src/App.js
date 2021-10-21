@@ -10,7 +10,6 @@ function App() {
          <h1>Categoryes/Products</h1>
          <Products />
          <div>_______________________________________________________________</div>
-         <Users />
     </div>
   );
 }

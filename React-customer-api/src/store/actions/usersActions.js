@@ -20,7 +20,6 @@ export const getUsers = () => async dispatch => {
 
 export const deleteUser = (id) => async (dispatch) => {
     try{
-        debugger;
         await axios.delete(`https://localhost:44377/Customers/${id}`)
 
         dispatch({

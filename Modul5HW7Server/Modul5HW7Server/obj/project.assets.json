@@ -5586,19 +5586,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\leoon\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\A-Level\\YurecGusar\\Modul5HW7\\Modul5HW7Server\\Modul5HW7Server\\Modul5HW7Server.csproj",
+      "projectUniqueName": "C:\\A-level\\HW\\Modul5HW7Server\\Modul5HW7Server\\Modul5HW7Server.csproj",
       "projectName": "Modul5HW7Server",
-      "projectPath": "E:\\A-Level\\YurecGusar\\Modul5HW7\\Modul5HW7Server\\Modul5HW7Server\\Modul5HW7Server.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "E:\\A-Level\\YurecGusar\\Modul5HW7\\Modul5HW7Server\\Modul5HW7Server\\obj\\",
+      "projectPath": "C:\\A-level\\HW\\Modul5HW7Server\\Modul5HW7Server\\Modul5HW7Server.csproj",
+      "packagesPath": "C:\\Users\\leoon\\.nuget\\packages\\",
+      "outputPath": "C:\\A-level\\HW\\Modul5HW7Server\\Modul5HW7Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\leoon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5665,7 +5665,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
