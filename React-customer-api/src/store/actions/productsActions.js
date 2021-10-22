@@ -38,9 +38,10 @@ export const deleteProduct = (id) => async (dispatch) => {
 export const createProduct = (newProduct) => async (dispath) =>{
     try{
         await axios.post(`https://localhost:44377/api/Products`, newProduct)
+        const res = await axios.get(`https://localhost:44377/api/Products`)
         dispath({
             type: POST_PRODUCTS,
-            payload: newProduct
+            payload: res.data[res.data.length - 1]
         })
     }
     catch(e){

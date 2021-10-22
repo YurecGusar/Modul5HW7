@@ -3,7 +3,6 @@ import {DELETE_PRODUCT, GET_PRODUCTS, POST_PRODUCTS, UPDATE_PRODUCT} from '../ty
 const initialState = {
     products:[],
     loading:true,
-    newProduct: {name: "", title: ""},
     product: {name: "", title: ""}
 }
 
@@ -18,6 +17,7 @@ export default function(state = initialState, action){
 
             }
         case DELETE_PRODUCT:
+            debugger;
             return {
                 ...state,
                 products:state.products.filter(({ id }) => id !== action.payload),
